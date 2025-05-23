@@ -1,3 +1,3 @@
-# CSStack.TADA
+# CSStack.TADA.MagicOnionHelper.Server
 
-Transaction-Aware Domain Architecture（TADA）でシステム構築する際に便利な C#のクラス、インターフェース群です。
+Transaction-Aware Domain Architecture(TADA)で実装したユースケースをMagicOnionでAPI化する際に便利なインターフェースやクラスをまとめたライブラリ。

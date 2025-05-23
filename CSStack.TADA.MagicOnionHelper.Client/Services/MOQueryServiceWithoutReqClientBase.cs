@@ -3,6 +3,12 @@ using MagicOnion.Client;
 
 namespace CSStack.TADA.MagicOnionHelper.Client
 {
+	/// <summary>
+	/// MagicOnionのクエリサービスのクライアント基底クラス(引数なし)
+	/// </summary>
+	/// <typeparam name="TMOQueryServiceWithoutReq">MagicOnionのクエリサービスインターフェース</typeparam>
+	/// <typeparam name="TMPRes">MessagePackのレスポンス型</typeparam>
+	/// <typeparam name="TRes">ユースケースのレスポンス型</typeparam>
 	public abstract class MOQueryServiceWithoutReqClientBase<TMOQueryServiceWithoutReq, TMPRes, TRes>
 		where TMOQueryServiceWithoutReq : IMOQueryServiceWithoutReq<TMOQueryServiceWithoutReq, TMPRes, TRes>
 		where TMPRes : IMPDTO<TRes, TMPRes>
@@ -28,7 +34,7 @@ namespace CSStack.TADA.MagicOnionHelper.Client
 		/// <summary>
 		/// 実行
 		/// </summary>
-		/// <param name="req"></param>
+		/// <param name="cancellationToken"></param>
 		/// <returns></returns>
 		public async ValueTask<TRes> ExecuteAsync(CancellationToken cancellationToken = default)
 		{
