@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Version>0.3.1</Version>
+    <Authors>Uta Sugane</Authors>
+    <Description>Transaction-Aware Domain Architecture(TADA)で実装したユースケースをMagicOnionでAPI化する際に便利なインターフェースやクラスをまとめたライブラリ。
+クライアントとサーバのインターフェース部分だけを定義しています。</Description>
+    <PackageIcon>CSStack.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>TADA;DDD;CSStack;MagicOnion;gRPC;MessagePack;</PackageTags>
+    <PackageReleaseNotes>初回リリース</PackageReleaseNotes>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CSStack.TADA" Version="0.3.1" />
+    <PackageReference Include="MagicOnion.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="CSStack.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
