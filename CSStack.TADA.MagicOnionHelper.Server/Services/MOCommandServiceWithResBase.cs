@@ -34,11 +34,18 @@ namespace CSStack.TADA.MagicOnionHelper.Server
 		}
 
 		/// <summary>
+		/// 実行（ExecuteCore）を呼び出すだけでOKです
+		/// </summary>
+		/// <param name="req"></param>
+		/// <returns></returns>
+		public abstract UnaryResult<TMPRes> Execute(TMPReq req);
+
+		/// <summary>
 		/// 実行
 		/// </summary>
 		/// <param name="req"></param>
 		/// <returns></returns>
-		public async UnaryResult<TMPRes> Execute(TMPReq req)
+		public virtual async UnaryResult<TMPRes> ExecuteCore(TMPReq req)
 		{
 			var ct = Context.CallContext.CancellationToken;
 			var res = await _commandService.ExecuteAsync(req.ToDTO(), ct);

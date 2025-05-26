@@ -37,7 +37,7 @@ namespace CSStack.TADA.MagicOnionHelper.Client
 		/// <param name="req"></param>
 		/// <param name="cancellationToken"></param>
 		/// <returns></returns>
-		public async ValueTask ExecuteAsync(TReq req, CancellationToken cancellationToken = default)
+		public virtual async ValueTask ExecuteAsync(TReq req, CancellationToken cancellationToken = default)
 		{
 			await Service.WithCancellationToken(cancellationToken).Execute(TMOReq.FromDTO(req));
 		}
