@@ -14,10 +14,6 @@ namespace CSStack.TADA.MagicOnionHelper.Client
 		where TMPRes : IMPDTO<TRes, TMPRes>
 		where TRes : IQueryServiceDTO
 	{
-		/// <summary>
-		/// コマンドサービス
-		/// </summary>
-		protected TMOQueryServiceWithoutReq Service;
 		private readonly IMOClientChannelFactory _channelFactory;
 
 		/// <summary>
@@ -27,8 +23,6 @@ namespace CSStack.TADA.MagicOnionHelper.Client
 		public MOQueryServiceWithoutReqClientBase(IMOClientChannelFactory channelFactory)
 		{
 			_channelFactory = channelFactory;
-			var channel = _channelFactory.GetChannel();
-			Service = MagicOnionClient.Create<TMOQueryServiceWithoutReq>(channel);
 		}
 
 		/// <summary>
@@ -38,7 +32,9 @@ namespace CSStack.TADA.MagicOnionHelper.Client
 		/// <returns></returns>
 		public virtual async ValueTask<TRes> ExecuteAsync(CancellationToken cancellationToken = default)
 		{
-			var res = await Service.WithCancellationToken(cancellationToken).Execute();
+			var channel = _channelFactory.GetChannel();
+			var service = MagicOnionClient.Create<TMOQueryServiceWithoutReq>(channel);
+			var res = await service.WithCancellationToken(cancellationToken).Execute();
 			return res.ToDTO();
 		}
 	}
