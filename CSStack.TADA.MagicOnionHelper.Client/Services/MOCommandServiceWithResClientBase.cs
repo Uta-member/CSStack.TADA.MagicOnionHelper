@@ -1,5 +1,6 @@
 ﻿using CSStack.TADA.MagicOnionHelper.Abstractions;
 using MagicOnion.Client;
+using System.ComponentModel;
 
 namespace CSStack.TADA.MagicOnionHelper.Client
 {
@@ -11,6 +12,9 @@ namespace CSStack.TADA.MagicOnionHelper.Client
     /// <typeparam name="TReq">ユースケースのリクエスト型</typeparam>
     /// <typeparam name="TMPRes">MessagePackのレスポンス型</typeparam>
     /// <typeparam name="TRes">ユースケースのレスポンス型</typeparam>
+    [Obsolete(
+        "MOCommandServiceWithResClientBase<TMOCommandServiceWithRes, TMPReq, TReq, TMPRes, TRes> is obsolete and will be removed in a future version. Use MOCommandServiceClientBase<TMOCommandServiceWithRes, TMPReq, TReq, TMPRes, TRes> instead.")]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public abstract class MOCommandServiceWithResClientBase<TMOCommandServiceWithRes, TMPReq, TReq, TMPRes, TRes>
         where TMOCommandServiceWithRes : IMOCommandServiceWithRes<TMOCommandServiceWithRes, TMPReq, TReq, TMPRes, TRes>
         where TMPReq : IMPDTO<TReq, TMPReq>

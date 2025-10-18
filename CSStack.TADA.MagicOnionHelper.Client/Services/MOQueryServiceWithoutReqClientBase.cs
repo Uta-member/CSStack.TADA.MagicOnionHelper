@@ -1,5 +1,6 @@
 ﻿using CSStack.TADA.MagicOnionHelper.Abstractions;
 using MagicOnion.Client;
+using System.ComponentModel;
 
 namespace CSStack.TADA.MagicOnionHelper.Client
 {
@@ -9,6 +10,9 @@ namespace CSStack.TADA.MagicOnionHelper.Client
     /// <typeparam name="TMOQueryServiceWithoutReq">MagicOnionのクエリサービスインターフェース</typeparam>
     /// <typeparam name="TMPRes">MessagePackのレスポンス型</typeparam>
     /// <typeparam name="TRes">ユースケースのレスポンス型</typeparam>
+    [Obsolete(
+        "MOQueryServiceWithoutReqClientBase<TMOQueryServiceWithoutReq, TMPRes, TRes> is obsolete and will be removed in a future version. Use MOQueryServiceClientBase<TMOQueryServiceWithoutReq, TMPRes, TRes> instead.")]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public abstract class MOQueryServiceWithoutReqClientBase<TMOQueryServiceWithoutReq, TMPRes, TRes>
         where TMOQueryServiceWithoutReq : IMOQueryServiceWithoutReq<TMOQueryServiceWithoutReq, TMPRes, TRes>
         where TMPRes : IMPDTO<TRes, TMPRes>

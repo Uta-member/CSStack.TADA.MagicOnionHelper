@@ -52,4 +52,47 @@ namespace CSStack.TADA.MagicOnionHelper.Server
 			return TMPRes.FromDTO(res);
 		}
 	}
+
+    /// <summary>
+    /// MagicOnionのクエリサービスの基底クラス(引数なし)
+    /// </summary>
+    /// <typeparam name="TMOQueryService">MagicOnionのクエリサービスインターフェース</typeparam>
+    /// <typeparam name="TQueryService">ユースケースのクエリサービスインターフェース</typeparam>
+    /// <typeparam name="TMPRes">MessagePackのレスポンス型</typeparam>
+    /// <typeparam name="TRes">ユースケースのレスポンス型</typeparam>
+    public abstract class MOQueryServiceBase<TMOQueryService, TQueryService, TMPRes, TRes>
+        : ServiceBase<TMOQueryService>
+        where TMOQueryService : IMOQueryService<TMOQueryService, TMPRes, TRes>
+        where TQueryService : IQueryService<TRes>
+        where TRes : IQueryServiceDTO
+        where TMPRes : IMPDTO<TRes, TMPRes>
+    {
+        private readonly TQueryService _queryService;
+
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="queryService"></param>
+        public MOQueryServiceBase(TQueryService queryService)
+        {
+            _queryService = queryService;
+        }
+
+        /// <summary>
+        /// 実行（ExecuteCore）を呼び出すだけでOKです
+        /// </summary>
+        /// <returns></returns>
+        public abstract UnaryResult<TMPRes> Execute();
+
+        /// <summary>
+        /// 実行
+        /// </summary>
+        /// <returns></returns>
+        public virtual async UnaryResult<TMPRes> ExecuteCore()
+        {
+            var ct = Context.CallContext.CancellationToken;
+            var res = await _queryService.ExecuteAsync(ct);
+            return TMPRes.FromDTO(res);
+        }
+    }
 }

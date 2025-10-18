@@ -1,55 +1,59 @@
 ﻿using CSStack.TADA.MagicOnionHelper.Abstractions;
 using MagicOnion;
 using MagicOnion.Server;
+using System.ComponentModel;
 
 namespace CSStack.TADA.MagicOnionHelper.Server
 {
-	/// <summary>
-	/// MagicOnionのコマンドサービスの基底クラス(戻り値あり)
-	/// </summary>
-	/// <typeparam name="TMOCommandServiceWithRes">MagicOnionのコマンドサービスインターフェース</typeparam>
-	/// <typeparam name="TCommandServiceWithRes">ユースケースのコマンドサービスインターフェース</typeparam>
-	/// <typeparam name="TMPReq">MessagePackのリクエスト型</typeparam>
-	/// <typeparam name="TReq">ユースケースのリクエスト型</typeparam>
-	/// <typeparam name="TMPRes">MessagePackのレスポンス型</typeparam>
-	/// <typeparam name="TRes">ユースケースのレスポンス型</typeparam>
-	public abstract class MOCommandServiceWithResBase<TMOCommandServiceWithRes, TCommandServiceWithRes, TMPReq, TReq, TMPRes, TRes>
+    /// <summary>
+    /// MagicOnionのコマンドサービスの基底クラス(戻り値あり)
+    /// </summary>
+    /// <typeparam name="TMOCommandServiceWithRes">MagicOnionのコマンドサービスインターフェース</typeparam>
+    /// <typeparam name="TCommandServiceWithRes">ユースケースのコマンドサービスインターフェース</typeparam>
+    /// <typeparam name="TMPReq">MessagePackのリクエスト型</typeparam>
+    /// <typeparam name="TReq">ユースケースのリクエスト型</typeparam>
+    /// <typeparam name="TMPRes">MessagePackのレスポンス型</typeparam>
+    /// <typeparam name="TRes">ユースケースのレスポンス型</typeparam>
+    [Obsolete(
+        "MOCommandServiceWithResBase<TMOCommandServiceWithRes, TCommandServiceWithRes, TMPReq, TReq, TMPRes, TRes> is obsolete and will be removed in a future version. Use MOCommandServiceBase<TMOCommandServiceWithRes, TCommandServiceWithRes, TMPReq, TReq, TMPRes, TRes> instead.")]
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public abstract class MOCommandServiceWithResBase<TMOCommandServiceWithRes, TCommandServiceWithRes, TMPReq, TReq, TMPRes, TRes>
 		: ServiceBase<TMOCommandServiceWithRes>
-		where TMOCommandServiceWithRes : IMOCommandServiceWithRes<TMOCommandServiceWithRes, TMPReq, TReq, TMPRes, TRes>
-		where TCommandServiceWithRes : ICommandServiceWithRes<TReq, TRes>
-		where TReq : ICommandServiceDTO
-		where TMPReq : IMPDTO<TReq, TMPReq>
-		where TRes : ICommandServiceDTO
-		where TMPRes : IMPDTO<TRes, TMPRes>
-	{
-		private readonly TCommandServiceWithRes _commandService;
+        where TMOCommandServiceWithRes : IMOCommandServiceWithRes<TMOCommandServiceWithRes, TMPReq, TReq, TMPRes, TRes>
+        where TCommandServiceWithRes : ICommandServiceWithRes<TReq, TRes>
+        where TReq : ICommandServiceDTO
+        where TMPReq : IMPDTO<TReq, TMPReq>
+        where TRes : ICommandServiceDTO
+        where TMPRes : IMPDTO<TRes, TMPRes>
+    {
+        private readonly TCommandServiceWithRes _commandService;
 
-		/// <summary>
-		/// コンストラクタ
-		/// </summary>
-		/// <param name="commandService"></param>
-		public MOCommandServiceWithResBase(TCommandServiceWithRes commandService)
-		{
-			_commandService = commandService;
-		}
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="commandService"></param>
+        public MOCommandServiceWithResBase(TCommandServiceWithRes commandService)
+        {
+            _commandService = commandService;
+        }
 
-		/// <summary>
-		/// 実行（ExecuteCore）を呼び出すだけでOKです
-		/// </summary>
-		/// <param name="req"></param>
-		/// <returns></returns>
-		public abstract UnaryResult<TMPRes> Execute(TMPReq req);
+        /// <summary>
+        /// 実行（ExecuteCore）を呼び出すだけでOKです
+        /// </summary>
+        /// <param name="req"></param>
+        /// <returns></returns>
+        public abstract UnaryResult<TMPRes> Execute(TMPReq req);
 
-		/// <summary>
-		/// 実行
-		/// </summary>
-		/// <param name="req"></param>
-		/// <returns></returns>
-		public virtual async UnaryResult<TMPRes> ExecuteCore(TMPReq req)
-		{
-			var ct = Context.CallContext.CancellationToken;
-			var res = await _commandService.ExecuteAsync(req.ToDTO(), ct);
-			return TMPRes.FromDTO(res);
-		}
-	}
+        /// <summary>
+        /// 実行
+        /// </summary>
+        /// <param name="req"></param>
+        /// <returns></returns>
+        public virtual async UnaryResult<TMPRes> ExecuteCore(TMPReq req)
+        {
+            var ct = Context.CallContext.CancellationToken;
+            var res = await _commandService.ExecuteAsync(req.ToDTO(), ct);
+            return TMPRes.FromDTO(res);
+        }
+    }
 }
