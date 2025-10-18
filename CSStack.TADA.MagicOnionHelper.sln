@@ -1,19 +1,26 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35825.156 d17.13
+VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSStack.TADA.MagicOnionHelper", "CSStack.TADA.MagicOnionHelper\CSStack.TADA.MagicOnionHelper.csproj", "{27945AA5-A081-4FB2-BD3B-6BED258DB66B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSStack.TADA.MagicOnionHelper", "src\CSStack.TADA.MagicOnionHelper\CSStack.TADA.MagicOnionHelper.csproj", "{27945AA5-A081-4FB2-BD3B-6BED258DB66B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSStack.TADA.MagicOnionHelper.Abstractions", "CSStack.TADA.MagicOnionHelper.Abstractions\CSStack.TADA.MagicOnionHelper.Abstractions.csproj", "{C257F397-836F-4373-A91C-1A0AA24F2C1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSStack.TADA.MagicOnionHelper.Abstractions", "src\CSStack.TADA.MagicOnionHelper.Abstractions\CSStack.TADA.MagicOnionHelper.Abstractions.csproj", "{C257F397-836F-4373-A91C-1A0AA24F2C1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSStack.TADA.MagicOnionHelper.Client", "CSStack.TADA.MagicOnionHelper.Client\CSStack.TADA.MagicOnionHelper.Client.csproj", "{80E2C3D7-017F-4D94-92A7-016DFF6863C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSStack.TADA.MagicOnionHelper.Client", "src\CSStack.TADA.MagicOnionHelper.Client\CSStack.TADA.MagicOnionHelper.Client.csproj", "{80E2C3D7-017F-4D94-92A7-016DFF6863C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSStack.TADA.MagicOnionHelper.Server", "CSStack.TADA.MagicOnionHelper.Server\CSStack.TADA.MagicOnionHelper.Server.csproj", "{AB1036A2-F9FC-4BF2-8672-A30FAFBB499D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSStack.TADA.MagicOnionHelper.Server", "src\CSStack.TADA.MagicOnionHelper.Server\CSStack.TADA.MagicOnionHelper.Server.csproj", "{AB1036A2-F9FC-4BF2-8672-A30FAFBB499D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DDB4EF12-CC4E-5E88-E6FC-71A802F4DE97}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{BFB2F44E-A7B5-4923-8961-B3006238A635}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		docs\USAGE.en.md = docs\USAGE.en.md
+		docs\USAGE.ja.md = docs\USAGE.ja.md
 	EndProjectSection
 EndProject
 Global

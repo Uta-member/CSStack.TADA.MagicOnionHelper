@@ -7,8 +7,7 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Version>1.0.0</Version>
     <Authors>Uta Sugane</Authors>
-    <Description>Transaction-Aware Domain Architecture(TADA)で実装したユースケースをMagicOnionでAPI化する際に便利なインターフェースやクラスをまとめたライブラリ。
-サーバ部分ののクラスを定義しています。</Description>
+    <Description>Transaction-Aware Domain Architecture(TADA)で実装したユースケースをMagicOnionでAPI化する際に便利なインターフェースやクラスをまとめたライブラリ。</Description>
     <PackageIcon>CSStack.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>TADA;DDD;CSStack;MagicOnion;gRPC;MessagePack;</PackageTags>
@@ -17,21 +16,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MagicOnion.Server" Version="7.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CSStack.TADA.MagicOnionHelper.Abstractions\CSStack.TADA.MagicOnionHelper.Abstractions.csproj" />
+    <ProjectReference Include="..\CSStack.TADA.MagicOnionHelper.Client\CSStack.TADA.MagicOnionHelper.Client.csproj" />
+    <ProjectReference Include="..\CSStack.TADA.MagicOnionHelper.Server\CSStack.TADA.MagicOnionHelper.Server.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="CSStack.png">
-      <Pack>True</Pack>
       <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
     </None>
     <None Update="README.md">
       <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
+      <PackagePath>..\..\</PackagePath>
     </None>
   </ItemGroup>
 

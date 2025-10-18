@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSStack.TADA.MagicOnionHelper", "CSStack.TADA.MagicOnionHelper\CSStack.TADA.MagicOnionHelper.csproj", "{DBDD20DA-0CC3-3CA4-0EDF-51928BD89A81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSStack.TADA.MagicOnionHelper.Abstractions", "CSStack.TADA.MagicOnionHelper.Abstractions\CSStack.TADA.MagicOnionHelper.Abstractions.csproj", "{B03C830C-D668-4574-7B3B-63FD24208CCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSStack.TADA.MagicOnionHelper.Client", "CSStack.TADA.MagicOnionHelper.Client\CSStack.TADA.MagicOnionHelper.Client.csproj", "{9B837A81-558A-076F-B325-A65118ED2537}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSStack.TADA.MagicOnionHelper.Server", "CSStack.TADA.MagicOnionHelper.Server\CSStack.TADA.MagicOnionHelper.Server.csproj", "{F04C6493-FE63-548D-717D-346972CC3896}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBDD20DA-0CC3-3CA4-0EDF-51928BD89A81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBDD20DA-0CC3-3CA4-0EDF-51928BD89A81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBDD20DA-0CC3-3CA4-0EDF-51928BD89A81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBDD20DA-0CC3-3CA4-0EDF-51928BD89A81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B03C830C-D668-4574-7B3B-63FD24208CCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B03C830C-D668-4574-7B3B-63FD24208CCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B03C830C-D668-4574-7B3B-63FD24208CCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B03C830C-D668-4574-7B3B-63FD24208CCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B837A81-558A-076F-B325-A65118ED2537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B837A81-558A-076F-B325-A65118ED2537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B837A81-558A-076F-B325-A65118ED2537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B837A81-558A-076F-B325-A65118ED2537}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F04C6493-FE63-548D-717D-346972CC3896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F04C6493-FE63-548D-717D-346972CC3896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F04C6493-FE63-548D-717D-346972CC3896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F04C6493-FE63-548D-717D-346972CC3896}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D75195A-1571-456F-9337-E2DA6EE7DE6D}
+	EndGlobalSection
+EndGlobal

@@ -8,7 +8,7 @@
     <Version>1.0.0</Version>
     <Authors>Uta Sugane</Authors>
     <Description>Transaction-Aware Domain Architecture(TADA)で実装したユースケースをMagicOnionでAPI化する際に便利なインターフェースやクラスをまとめたライブラリ。
-クライアントとサーバのインターフェース部分だけを定義しています。</Description>
+サーバ部分ののクラスを定義しています。</Description>
     <PackageIcon>CSStack.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>TADA;DDD;CSStack;MagicOnion;gRPC;MessagePack;</PackageTags>
@@ -17,8 +17,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CSStack.TADA" Version="1.0.0" />
-    <PackageReference Include="MagicOnion.Abstractions" Version="7.0.0" />
+    <PackageReference Include="MagicOnion.Server" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CSStack.TADA.MagicOnionHelper.Abstractions\CSStack.TADA.MagicOnionHelper.Abstractions.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,7 +31,7 @@
     </None>
     <None Update="README.md">
       <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
+      <PackagePath>..\..\</PackagePath>
     </None>
   </ItemGroup>
 
